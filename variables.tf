@@ -36,3 +36,20 @@ variable "tags" {
   type        = any
   default     = {}
 }
+
+variable "source_path" {
+  description = "the absolute path for metadata"
+  type        = string
+}
+
+variable "s3_bucket" {
+  description = "the bucket name containing metadata"
+  type = string
+  default = null
+}
+
+variable "s3_key_path" {
+  description = "bucket key containing metadata"
+  type = string
+  default = null
+}
