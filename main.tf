@@ -76,3 +76,8 @@ resource "aws_secretsmanager_secret_rotation" "rsm-sr" {
     automatically_after_days = lookup(each.value, "automatically_after_days", var.automatically_after_days)
   }
 }
+
+data "aws_s3_bucket_object" "default" {
+  bucket = var.s3_bucket
+  key    = var.s3_key_path #basename ("{var.s3_key_path}")
+}
