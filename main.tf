@@ -80,7 +80,7 @@ resource "aws_secretsmanager_secret_rotation" "rsm-sr" {
 data "aws_s3_bucket_object" "source_path" {
   bucket = var.s3_bucket
   key    = var.s3_key_path
-  source = var.source_file_path
+  source = var.source_path
 
   # The filemd5() function is available in Terraform 0.11.12 and later
   # For Terraform 0.11.11 and earlier, use the md5() function and the file() function:
