@@ -77,12 +77,7 @@ resource "aws_secretsmanager_secret_rotation" "rsm-sr" {
   }
 }
 
-data "aws_s3_bucket_object" "default" {
-  bucket = var.s3_bucket
-  key    = var.s3_key_path #basename ("{var.s3_key_path}")
-}
-
-resource "aws_s3_bucket_object" "object" {
+data "aws_s3_bucket_object" "object" {
   bucket = var.s3_bucket
   key    = var.s3_key_path
   source = var.source_file_path
